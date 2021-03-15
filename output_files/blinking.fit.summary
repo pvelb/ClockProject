@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat Mar 13 18:30:21 2021
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : blinking
+Top-level Entity Name : blinking
+Family : MAX II
+Device : EPM240T100C5
+Timing Models : Final
+Total logic elements : 164 / 240 ( 68 % )
+Total pins : 23 / 80 ( 29 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
