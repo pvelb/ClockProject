@@ -1,5 +1,5 @@
 Analysis & Synthesis report for blinking
-Mon Mar 15 18:58:25 2021
+Mon Mar 15 20:37:06 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,15 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Analysis & Synthesis Messages
+ 13. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,11 +45,15 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Mar 15 18:58:25 2021           ;
+; Analysis & Synthesis Status ; Successful - Mon Mar 15 20:37:06 2021       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; blinking                                    ;
 ; Top-level Entity Name       ; blinking                                    ;
 ; Family                      ; MAX II                                      ;
+; Total logic elements        ; 169                                         ;
+; Total pins                  ; 23                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
 
 
@@ -132,25 +144,185 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                      ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
+; blinking.v                       ; yes             ; User Verilog HDL File  ; E:/Projects/SystemVerilog/ClockProject/blinking.v ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Total logic elements                        ; 169               ;
+;     -- Combinational with no register       ; 78                ;
+;     -- Register only                        ; 13                ;
+;     -- Combinational with a register        ; 78                ;
+;                                             ;                   ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 76                ;
+;     -- 3 input functions                    ; 23                ;
+;     -- 2 input functions                    ; 45                ;
+;     -- 1 input functions                    ; 12                ;
+;     -- 0 input functions                    ; 0                 ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 138               ;
+;     -- arithmetic mode                      ; 31                ;
+;     -- qfbk mode                            ; 0                 ;
+;     -- register cascade mode                ; 0                 ;
+;     -- synchronous clear/load mode          ; 0                 ;
+;     -- asynchronous clear/load mode         ; 0                 ;
+;                                             ;                   ;
+; Total registers                             ; 91                ;
+; Total logic cells in carry chains           ; 34                ;
+; I/O pins                                    ; 23                ;
+; Maximum fan-out node                        ; secondsPoint~reg0 ;
+; Maximum fan-out                             ; 55                ;
+; Total fan-out                               ; 601               ;
+; Average fan-out                             ; 3.13              ;
++---------------------------------------------+-------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |blinking                  ; 169 (169)   ; 91           ; 0          ; 23   ; 0            ; 78 (78)      ; 13 (13)           ; 78 (78)          ; 34 (34)         ; 0 (0)      ; |blinking           ; blinking    ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------+
+; Registers Removed During Synthesis                                  ;
++---------------------------------------+-----------------------------+
+; Register name                         ; Reason for Removal          ;
++---------------------------------------+-----------------------------+
+; sec60ones[0]                          ; Merged with seconds[0]~reg0 ;
+; Total Number of Removed Registers = 1 ;                             ;
++---------------------------------------+-----------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 91    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; catodes[0]~reg0                         ; 1       ;
+; catodes[1]~reg0                         ; 1       ;
+; catodes[2]~reg0                         ; 1       ;
+; catodes[3]~reg0                         ; 1       ;
+; catodes[4]~reg0                         ; 1       ;
+; catodes[5]~reg0                         ; 1       ;
+; catodes[6]~reg0                         ; 1       ;
+; digits[1]~reg0                          ; 14      ;
+; digits[2]~reg0                          ; 8       ;
+; digits[3]~reg0                          ; 8       ;
+; seconds[0]~reg0                         ; 14      ;
+; seconds[1]~reg0                         ; 2       ;
+; seconds[2]~reg0                         ; 2       ;
+; seconds[3]~reg0                         ; 2       ;
+; seconds[4]~reg0                         ; 2       ;
+; seconds[5]~reg0                         ; 2       ;
+; seconds[6]~reg0                         ; 2       ;
+; seconds[7]~reg0                         ; 2       ;
+; seconds[8]~reg0                         ; 2       ;
+; seconds[9]~reg0                         ; 2       ;
+; symb1[0]                                ; 1       ;
+; symb2[0]                                ; 1       ;
+; symb3[0]                                ; 1       ;
+; symb0[0]                                ; 1       ;
+; symb1[1]                                ; 1       ;
+; symb2[1]                                ; 1       ;
+; symb3[1]                                ; 1       ;
+; symb0[1]                                ; 1       ;
+; symb1[2]                                ; 1       ;
+; symb2[2]                                ; 1       ;
+; symb3[2]                                ; 1       ;
+; symb0[2]                                ; 1       ;
+; symb1[3]                                ; 1       ;
+; symb2[3]                                ; 1       ;
+; symb3[3]                                ; 1       ;
+; symb0[3]                                ; 1       ;
+; symb1[4]                                ; 1       ;
+; symb2[4]                                ; 1       ;
+; symb3[4]                                ; 1       ;
+; symb0[4]                                ; 1       ;
+; symb1[5]                                ; 1       ;
+; symb2[5]                                ; 1       ;
+; symb3[5]                                ; 1       ;
+; symb0[5]                                ; 1       ;
+; symb1[6]                                ; 1       ;
+; symb2[6]                                ; 1       ;
+; symb3[6]                                ; 1       ;
+; symb0[6]                                ; 1       ;
+; Total number of inverted registers = 48 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |blinking|sec60decs[2]     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |blinking|min60decs[0]     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |blinking|min60ones[0]     ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 28 LEs               ; 42 LEs                 ; Yes        ; |blinking|catodes[6]~reg0  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Mar 15 18:58:10 2021
+    Info: Processing started: Mon Mar 15 20:36:51 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off blinking -c blinking
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 3 of the 3 processors detected
 Info (12021): Found 3 design units, including 3 entities, in source file blinking.v
-    Info (12023): Found entity 1: blinking File: E:/Projects/SystemVerilog/blinking.v Line: 3
-    Info (12023): Found entity 2: segDecoder File: E:/Projects/SystemVerilog/blinking.v Line: 137
-    Info (12023): Found entity 3: cntr File: E:/Projects/SystemVerilog/blinking.v Line: 163
-Error (10161): Verilog HDL error at blinking.v(144): object "min60decs" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: E:/Projects/SystemVerilog/blinking.v Line: 144
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 541 megabytes
-    Error: Processing ended: Mon Mar 15 18:58:25 2021
-    Error: Elapsed time: 00:00:15
-    Error: Total CPU time (on all processors): 00:00:28
+    Info (12023): Found entity 1: encode_digit File: E:/Projects/SystemVerilog/ClockProject/blinking.v Line: 1
+    Info (12023): Found entity 2: symbDecoder File: E:/Projects/SystemVerilog/ClockProject/blinking.v Line: 19
+    Info (12023): Found entity 3: blinking File: E:/Projects/SystemVerilog/ClockProject/blinking.v Line: 47
+Info (12021): Found 0 design units, including 0 entities, in source file symbdecoder.v
+Info (12127): Elaborating entity "blinking" for the top level hierarchy
+Info (21057): Implemented 192 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 169 logic cells
+Info (144001): Generated suppressed messages file E:/Projects/SystemVerilog/ClockProject/output_files/blinking.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 558 megabytes
+    Info: Processing ended: Mon Mar 15 20:37:06 2021
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:28
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/Projects/SystemVerilog/ClockProject/output_files/blinking.map.smsg.
 
 

@@ -81,3 +81,4 @@ set_location_assignment PIN_91 -to seconds[6]
 set_location_assignment PIN_95 -to seconds[7]
 set_location_assignment PIN_97 -to seconds[8]
 set_location_assignment PIN_99 -to seconds[9]
+set_global_assignment -name VERILOG_FILE symbDecoder.v

@@ -1,5 +1,9 @@
-Analysis & Synthesis Status : Failed - Mon Mar 15 18:58:25 2021
+Analysis & Synthesis Status : Successful - Mon Mar 15 20:37:06 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : blinking
 Top-level Entity Name : blinking
 Family : MAX II
+Total logic elements : 169
+Total pins : 23
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,4 +1,31 @@
 
+module symbDecoder(
+input [3:0] dIn,
+output [6:0] dOut
+);
+reg [6:0] symb0;
+
+  always @ (dIn)
+  begin
+   case(dIn)  
+		4'b0000: symb0<=7'b0001000;//0	
+		4'b0001: symb0<=7'b1101110;//1   
+		4'b0010: symb0<=7'b0010010;//2     
+		4'b0011: symb0<=7'b1000010;//3 
+		4'b0100: symb0<=7'b1100100;//4
+		4'b0101: symb0<=7'b1000001;//5 
+		4'b0110: symb0<=7'b0000001;//6 
+		4'b0111: symb0<=7'b1101010;//7 
+		4'b1000: symb0<=7'b0000000;//8
+		4'b1001: symb0<=7'b1000000;//9 
+		default: symb0<=7'b1111111;  	
+		endcase
+  end 
+
+  assign dOut = symb0;
+
+endmodule
+
 
 module blinking (
 
@@ -56,7 +83,8 @@ module blinking (
 			secondsPoint<=~secondsPoint;
 			end
 	 end
-	 
+	
+			
 	always @ (negedge secondsPoint) begin//seconds counter
 			seconds<=seconds+1'b1;
 			sec60ones<=sec60ones+1'b1;
@@ -115,7 +143,9 @@ module blinking (
 			4'b1001: symb1<=7'b1000000;//9 
 			default: symb1<=7'b1111111;  	
 			endcase
-			case(min60decs)  
+			//Problemms////////////////////////////////////////////////////////////
+			symbDecoder symbDec1(min60decs,symb0);
+			/*case(min60decs)  
 			4'b0000: symb0<=7'b0001000;//0	
 			4'b0001: symb0<=7'b1101110;//1   
 			4'b0010: symb0<=7'b0010010;//2     
@@ -127,50 +157,10 @@ module blinking (
 			4'b1000: symb0<=7'b0000000;//8
 			4'b1001: symb0<=7'b1000000;//9 
 			default: symb0<=7'b1111111;  	
-			endcase
+			endcase*/
+			//Problemms////////////////////////////////////////////////////////////
 			
 	 end
-
-endmodule
-
-
-module segDecoder(sin, sout);
-input wire [3:0] sin;
-output wire [6:0] sout;
-reg [6:0] symb0;
-
-  always @ (sin)
-  begin
-   case(min60decs)  
-		4'b0000: symb0<=7'b0001000;//0	
-		4'b0001: symb0<=7'b1101110;//1   
-		4'b0010: symb0<=7'b0010010;//2     
-		4'b0011: symb0<=7'b1000010;//3 
-		4'b0100: symb0<=7'b1100100;//4
-		4'b0101: symb0<=7'b1000001;//5 
-		4'b0110: symb0<=7'b0000001;//6 
-		4'b0111: symb0<=7'b1101010;//7 
-		4'b1000: symb0<=7'b0000000;//8
-		4'b1001: symb0<=7'b1000000;//9 
-		default: symb0<=7'b1111111;  	
-		endcase
-  end 
-
-  assign sout = symb0;
-
-endmodule
-
-module cntr #(parameter width=4) (clk, res, out);
-
-input wire clk, res;
-output reg [width-1:0] out; initial out <= {width{1'b0}};
-
-always @(posedge clk or posedge res) begin
-  if (res) begin
-    out <= 0;
-  end else begin 
-    out <= out + 1'b1;
-  end
-end
+	//encode_digit enc1(digits, clock500, symb1[0:6]);
 
 endmodule

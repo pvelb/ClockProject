@@ -1,5 +1,5 @@
 Fitter report for blinking
-Sat Mar 13 18:30:21 2021
+Mon Mar 15 19:32:56 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -56,7 +56,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------+
 ; Fitter Summary                                                      ;
 +-----------------------+---------------------------------------------+
-; Fitter Status         ; Successful - Sat Mar 13 18:30:21 2021       ;
+; Fitter Status         ; Successful - Mon Mar 15 19:32:56 2021       ;
 ; Quartus Prime Version ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name         ; blinking                                    ;
 ; Top-level Entity Name ; blinking                                    ;
@@ -127,20 +127,20 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 3           ;
 ; Maximum allowed            ; 3           ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
+; Average used               ; 1.02        ;
 ; Maximum used               ; 3           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.9%      ;
-;     Processor 3            ;   1.6%      ;
+;     Processor 2            ;   0.9%      ;
+;     Processor 3            ;   0.8%      ;
 +----------------------------+-------------+
 
 
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in E:/Projects/SystemVerilog/output_files/blinking.pin.
+The pin-out file can be found in E:/Projects/SystemVerilog/ClockProject/output_files/blinking.pin.
 
 
 +--------------------------------------------------------------------+
@@ -583,18 +583,18 @@ Info (332111): Found 3 clocks
     Info (332111):    1.000     CLOCK_50
     Info (332111):    1.000 secondsPoint~reg0
 Info (186079): Completed User Assigned Global Signals Promotion Operation
-Info (186215): Automatically promoted signal "CLOCK_50" to use Global clock in PIN 12 File: E:/Projects/SystemVerilog/blinking.v Line: 5
-Info (186216): Automatically promoted some destinations of signal "secondsPoint~reg0" to use Global clock File: E:/Projects/SystemVerilog/blinking.v Line: 47
-    Info (186217): Destination "secondsPoint" may be non-global or may not use global clock File: E:/Projects/SystemVerilog/blinking.v Line: 8
-    Info (186217): Destination "secondsPoint~reg0" may be non-global or may not use global clock File: E:/Projects/SystemVerilog/blinking.v Line: 47
-Info (186216): Automatically promoted some destinations of signal "clock500" to use Global clock File: E:/Projects/SystemVerilog/blinking.v Line: 15
-    Info (186217): Destination "clock500" may be non-global or may not use global clock File: E:/Projects/SystemVerilog/blinking.v Line: 15
+Info (186215): Automatically promoted signal "CLOCK_50" to use Global clock in PIN 12 File: E:/Projects/SystemVerilog/ClockProject/blinking.v Line: 5
+Info (186216): Automatically promoted some destinations of signal "secondsPoint~reg0" to use Global clock File: E:/Projects/SystemVerilog/ClockProject/blinking.v Line: 44
+    Info (186217): Destination "secondsPoint" may be non-global or may not use global clock File: E:/Projects/SystemVerilog/ClockProject/blinking.v Line: 8
+    Info (186217): Destination "secondsPoint~reg0" may be non-global or may not use global clock File: E:/Projects/SystemVerilog/ClockProject/blinking.v Line: 44
+Info (186216): Automatically promoted some destinations of signal "clock500" to use Global clock File: E:/Projects/SystemVerilog/ClockProject/blinking.v Line: 13
+    Info (186217): Destination "clock500" may be non-global or may not use global clock File: E:/Projects/SystemVerilog/ClockProject/blinking.v Line: 13
 Info (186079): Completed Auto Global Promotion Operation
 Info (176234): Starting register packing
 Info (186468): Started processing fast register assignments
 Info (186469): Finished processing fast register assignments
 Info (176235): Finished register packing
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -606,21 +606,21 @@ Info (170195): Router estimated average interconnect usage is 9% of the availabl
     Info (170196): Router estimated peak interconnect usage is 9% of the available device resources in the region that extends from location X0_Y0 to location X8_Y5
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.32 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (11888): Total time spent on timing analysis during the Fitter is 0.33 seconds.
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file E:/Projects/SystemVerilog/output_files/blinking.fit.smsg
+Info (144001): Generated suppressed messages file E:/Projects/SystemVerilog/ClockProject/output_files/blinking.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 1006 megabytes
-    Info: Processing ended: Sat Mar 13 18:30:21 2021
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 1009 megabytes
+    Info: Processing ended: Mon Mar 15 19:32:56 2021
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:03
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in E:/Projects/SystemVerilog/output_files/blinking.fit.smsg.
+The suppressed messages can be found in E:/Projects/SystemVerilog/ClockProject/output_files/blinking.fit.smsg.
 
 
